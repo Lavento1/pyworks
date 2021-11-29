@@ -1,15 +1,18 @@
 # 다각형 그리기
 import turtle as t
 
+
 def polygon(n):
     for x in range(n):
         t.forward(50)
         t.left(360/n)
 
+
 def polygon2(n, d):  # d - 거리
     for x in range(n):
         t.forward(d)
         t.left(360/n)
+
 
 polygon(3)
 polygon(5)

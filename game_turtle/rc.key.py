@@ -31,7 +31,7 @@ t.onkeypress(turn_right, "Right")
 t.onkeypress(turn_up, "Up")
 t.onkeypress(turn_left, "Left")
 t.onkeypress(turn_down, "Down")
-t.onkeypress(clear, "Escape")     # 선 모두 지우기
-t.listen()                          # 실행 대기
+t.onkeypress(clear, "Escape")       # 선 모두 지우기
+t.listen()                          # 그래픽 창에 키보드 입력 실행 대기
 
 t.mainloop()
