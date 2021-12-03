@@ -21,10 +21,30 @@ def register():
         return render_template('register.html') # GET 방식
 
 
-@app.route('/loop_index')
+@app.route('/loop_index/')
 def get_loopindex():
     items = ['a', 'b', 'c', 'd']
     return render_template('loop_index.html', items=items)
+
+
+@app.route('/even_odd/', methods=['GET', 'POST'])
+def even_odd():
+    if request.method == 'POST':
+        try:
+            # 데이터 수집
+            num = int(request.form['num'])
+        except ValueError:
+            error_message = "숫자를 입력해주세요"
+            return render_template('even_odd.html', error_message=error_message)
+        else:
+            if num % 2 ==0:
+                result = '짝수입니다.'
+            else:
+                result = '홀수입니다.'
+            return render_template('calc_result.html', num=num, result=result)
+
+    else:   # GET인 경우
+        return render_template('even_odd.html')
 
 
 app.run(debug=True)     # debug = True -> 서비스 전 개발 모드
