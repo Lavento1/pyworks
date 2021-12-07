@@ -31,7 +31,7 @@ def insert_book():
     cur = conn.cursor()
     # sql = "INSERT INTO book(title, publisher, page) VALUES ('웹 표준의 정석', '고경희', 600)"
     sql = "INSERT INTO book(title, publisher, page) VALUES (?, ?, ?)"
-    cur.execute(sql, ('점프 투 파이썬', '박응용', 500))
+    cur.execute(sql, ('점프 투 파이썬', '박응용', 300))
     conn.commit()
     conn.close()
 
